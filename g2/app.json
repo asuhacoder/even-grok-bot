@@ -1,0 +1,22 @@
+{
+  "package_id": "com.example.grokbotg2",
+  "edition": "202601",
+  "name": "Grok Bot G2",
+  "version": "0.1.8",
+  "min_sdk_version": "0.0.16",
+  "entrypoint": "index.html",
+  "permissions": [
+    {
+      "name": "network",
+      "desc": "Connects to the relay the owner configures on their own computer, inside their private network, to read and operate Grok Bot conversations.",
+      "whitelist": []
+    },
+    {
+      "name": "g2-microphone",
+      "desc": "Records spoken instructions; audio is transcribed only on the owner's computer."
+    }
+  ],
+  "supported_languages": [
+    "ja"
+  ]
+}

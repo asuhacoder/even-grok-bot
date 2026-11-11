@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.evengrok.asr</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__ROOT__/asr/start.sh</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- Restart on a crash, but not on a clean exit. start.sh exits 0 when the
+       port is already served, so SuccessfulExit=false keeps launchd out of a
+       restart loop in that case. -->
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key>
+    <false/>
+  </dict>
+
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+
+  <key>WorkingDirectory</key>
+  <string>__ROOT__/asr</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>ASR_THREADS</key>
+    <string>6</string>
+    <key>ASR_PORT</key>
+    <string>__ASR_PORT__</string>
+  </dict>
+
+  <!-- launchd expands neither ~ nor $HOME: install.sh writes absolute paths.
+       The log directory must exist before the job loads. -->
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/even-grok/asr.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/even-grok/asr.err.log</string>
+
+  <key>ProcessType</key>
+  <string>Interactive</string>
+</dict>
+</plist>

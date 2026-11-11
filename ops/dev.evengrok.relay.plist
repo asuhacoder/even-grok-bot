@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>dev.evengrok.relay</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__NODE__</string>
+    <string>__ROOT__/relay/src/main.ts</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+  <key>WorkingDirectory</key>
+  <string>__ROOT__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>RELAY_PORT</key>
+    <string>__RELAY_PORT__</string>
+    <key>RELAY_RAW_PORT</key>
+    <string>__RELAY_RAW_PORT__</string>
+    <key>RELAY_OWNER_LOGIN</key>
+    <string>__OWNER_LOGIN__</string>
+    <key>RELAY_RAW_PROXY_PROTOCOL</key>
+    <string>__RAW_PROXY__</string>
+    <key>TAILSCALE_BIN</key>
+    <string>__TAILSCALE_BIN__</string>
+    <key>TAILSCALE_SOCKET</key>
+    <string>__TAILSCALE_SOCKET__</string>
+    <key>GROK_APP</key>
+    <string>__GROK_APP__</string>
+    <key>GROK_CDP_PORT</key>
+    <string>9447</string>
+    <key>ASR_URL</key>
+    <string>http://127.0.0.1:__ASR_PORT__</string>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>__HOME__/Library/Logs/even-grok/relay.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/Library/Logs/even-grok/relay.err.log</string>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+</dict>
+</plist>

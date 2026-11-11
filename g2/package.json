@@ -1,0 +1,24 @@
+{
+  "name": "even-grok-g2",
+  "private": true,
+  "description": "Even Hub app for Even Realities G2 that talks to the even-grok-bot relay",
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "pack": "vite build --mode package && evenhub pack app.json dist -o grok-bot.ehpk",
+    "simulate": "evenhub-simulator --automation-port 9898 http://127.0.0.1:5173"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "0.0.16",
+    "@evenrealities/pretext": "0.1.4"
+  },
+  "devDependencies": {
+    "@evenrealities/evenhub-cli": "^0.1.14",
+    "@evenrealities/evenhub-simulator": "^0.9.5",
+    "vite": "^6.4.4"
+  }
+}

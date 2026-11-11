@@ -1,0 +1,27 @@
+{
+  "name": "even-grok-bot",
+  "private": true,
+  "description": "Read, answer, approve, and dictate to Grok Bot from Even Realities G2 glasses through a relay on your own Mac",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asuhacoder/even-grok-bot.git"
+  },
+  "type": "module",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "test": "node --test 'shared/**/*.test.ts' 'relay/src/**/*.test.ts' 'g2/src/**/*.test.ts' 'ops/**/*.test.ts'",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "ws": "8"
+  },
+  "devDependencies": {
+    "@types/node": "24",
+    "@types/ws": "8",
+    "typescript": "5"
+  }
+}

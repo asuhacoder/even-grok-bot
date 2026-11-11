@@ -1,0 +1,10 @@
+ts	phase	decision	why	evidence	result
+2026-10-22T10:44:36Z	frame	Public tree must have no client or personal strings, no tracked audio or screenshots, and launchd templates that parse	The repo will be republished from this tree with history discarded	user request	predicate set
+2026-10-22T10:44:36Z	redact	Replaced 335 client, bot, and misread strings with generic examples and left the measured numbers	The published text should not name clients, and the benchmark figures stay the ones that were measured	asr/README.md	hash test pass
+2026-10-22T10:44:36Z	media	Deleted 5 simulator screenshots and ignored audio plus future screenshots in that folder	Four images showed client bot names. No wav, package, or dist output was tracked	git ls-files	media test pass
+2026-10-22T10:44:36Z	plist	Fixed the asr label tag, lint the rendered plist before bootout, and restore the previous job if bootstrap fails	A bad template was unloading asr and then stopping the script	ops/launchd.test.ts	4 tests pass
+2026-10-22T10:44:36Z	scan	git grep of the requested pattern classes returned no matches	The test hashes names so the scan command can be rerun without storing the names in the test	g2/src/personal-data.test.ts	0 matches, grep exit 1
+2026-10-22T10:44:36Z	verify	Ran the suite on Node 24 and the typecheck	Node 22 made one existing websocket test time out. Node 24 is the engines range	pnpm test; tsc --noEmit	59 pass, tsc exit 0
+2026-10-22T10:44:36Z	comments	Removed the new explanatory comments in the asr starter and the installer	The empty-prompt branch and the lint-before-bootout order are visible in the code and the tests	asr/start.sh ops/install.sh	comments removed
+2026-10-22T10:44:36Z	skill	Left the Even Hub deploy skill unchanged	It already tells the reader not to reuse account names, paths, or host names	.agents/skills/evenhub-deploy/SKILL.md	no edit
+2026-10-22T10:44:51Z	media	Also removed the fifth simulator screenshot, whose visible text was generic sample phrases	The folder is ignored so a later live capture is not committed with the four that named clients	docs/sim/04-conv-older.png	deleted with the set
